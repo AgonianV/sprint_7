@@ -18,7 +18,7 @@ def get_courier_id(login, password):
     response = requests.post(courier_login_endpoint, json=payload)
     return response.json().get("id")
 
-@allure.step('Генерация рандомной строки')
+@allure.step('Генерация строки')
 def generate_random_string(length):
     letters = string.ascii_lowercase
     random_string = ''.join(random.choice(letters) for i in range(length))
