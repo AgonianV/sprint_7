@@ -8,10 +8,7 @@ def courier_data_new_with_delete():
     payload = generate_courier_data()
     yield payload
     courier_id = get_courier_id(payload["login"], payload["password"])
-    if courier_id:
-        delete_courier(courier_id)
-    else:
-        print(f"Курьер не существует логин - {payload['login']}")
+    delete_courier(courier_id)
 
 
 
@@ -27,7 +24,4 @@ def courier_data_with_delete_courier():
     yield payload
 
     courier_id = get_courier_id(login, password)
-    if courier_id:
-        delete_courier(courier_id)
-    else:
-        print(f"Курьер не существует логин - '{login}' ")
+    delete_courier(courier_id)
